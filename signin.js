@@ -1,5 +1,4 @@
 
-
 const signinForm= document.getElementById("signinForm")
 signinForm.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -19,5 +18,7 @@ signinForm.addEventListener("submit", (e)=>{
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
+      alert("Incorrect email or Password")
     });
 })
+

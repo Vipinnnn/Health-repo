@@ -1,6 +1,13 @@
 //listen for auth status changes
 auth.onAuthStateChanged(user =>{
-  console.log(user);
+  
+  if (user){
+    location.replace("./home.html");
+  }
+  else()=>{
+  location.replace("./signin.html");
+  }
+ 
 })
 
 const signupForm= document.getElementById("signupForm")
@@ -17,7 +24,10 @@ signupForm.addEventListener("submit", (e)=>{
       // alert("You have Succesfully Signed Up")
       // Signed in 
       var user = userCredential.user;
-      console.log(user);
+      return db.collection("users").doc(user.uid).set({
+        age: document.getElementById("age").value
+      })
+      // console.log(user);
       signupForm.reset();
       location.replace("./home.html");
       
@@ -27,9 +37,11 @@ signupForm.addEventListener("submit", (e)=>{
       var errorCode = error.code;
       var errorMessage = error.message;
       // ..
+      alert("ERROR")
     });
 
 })
+
 
 
 
