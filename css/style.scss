@@ -1,0 +1,118 @@
+
+*,::before,::after{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+    background-image: -webkit-linear-gradient(top left, #a802e0, #f7676a);
+    color: white;
+}
+
+a{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+.container-main{
+    padding: 16px;
+    margin: 5px;
+    // align-items:center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-bottom{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    h3{
+        margin: 0px 20px 20px 20px;
+    }
+    #signup{
+        margin: 5px 10px;
+        color: white;
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 30px;
+    }
+}
+
+.form-ctn{
+    display: block;
+    width: 600px;
+    height: auto;
+    position: relative;
+    margin: 100px auto;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // text-align: center;
+    border: 3px solid #f1f1f1;
+    border-radius: 20px;
+    h2{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        font-size: 2rem;
+    }
+}
+
+label{
+    font-size: 18px;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+input[type=text], input[type=password],input[type=email] {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    font-size: 18px;
+    // text-align: center;
+}
+
+button {
+    background-color:transparent;
+    color: white;
+    font-size: 18px;
+    padding: 14px 20px;
+    margin: 16px auto;
+    cursor: pointer;
+    width: 80%;
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: linear;
+    transition-duration: .2s;
+}
+
+button:hover{
+    background-color: white;
+    color:black;
+}
+
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }

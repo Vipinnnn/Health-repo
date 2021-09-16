@@ -8,7 +8,7 @@ forg.addEventListener("submit" , function(e){
   firebase.auth().sendPasswordResetEmail(email)
   .then(() => {
       alert("Password Reset Email Sent")
-      location.replace("./signin.html")
+      location.replace("/signin.html")
     // Password reset email sent!
     // ..
   })
