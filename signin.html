@@ -5,23 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Repository</title>
-  
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
-    <div class="form">
-        <form id="signinForm" action="">
-            <label for="email">Email: </label>
-            <input id="email" type="email">
-            <label for="pass">Password: </label>
-            <input id="password" type="password">
-            <button type="submit">Login</button>
-            <p>New User? <a href="./signup.html">Signup here</a></p>
-            <a href="./forgotpassword.html">Forgot Password?</a>
+    <div class="form-ctn">
+      <form action="" id="signinForm">
+      <h2>Login Form</h2>
+      <div class="container-main">
+        <label for="uname"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+    
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
             
-            
-
-        </form>
+        <button type="submit"><h3>Login</h3></button>
+      </div>
+      <div class="container-bottom">
+        <h3> New User? <a href="./signup.html" id="signup">Sign Up</a></h3>
+        <h3>Forgot <a href="./forgotpassword.html">Password?</a></h3>
+      </div>
+      </form>
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
