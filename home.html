@@ -8,31 +8,26 @@
 </head>
 <body>
     <h1>Health Reports</h1>
+    <h3>Blood Tests</h3>
+    <input type="file" id="file">
+    <progress id="progressBar" value="0" max="100"></progress>
+    <button type="submit" id="upload">upload</button>
+    <br>
+    <h3>Cancer Tests</h3>
+    <input type="file" id="file2">
+    <progress id="progressBar2" value="0" max="100"></progress>
+    <button type="submit" id="upload2">upload</button>
+    <br>
+    <br>
     <button id="Logout">Logout</button>
 
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
-    <script>
-      // Initialize Firebase
-      const firebaseConfig = {
-  apiKey: "AIzaSyBhF9aj9umJDhdZZ9utQZ1qPlAwDKfvTMU",
-  authDomain: "health-repo.firebaseapp.com",
-  projectId: "health-repo",
-  storageBucket: "health-repo.appspot.com",
-  messagingSenderId: "1025223757050",
-  appId: "1:1025223757050:web:48b6be5d782d2f1096cd43",
-  measurementId: "G-2GTNRFL9V5"
-};
-      firebase.initializeApp(firebaseConfig);
-      
-      // make auth and firestore references
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-  
-      // update firestore settings
-      // db.settings({ timestampsInSnapshots: true });
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+    <script src="./js/firebaseconfig.js"></script>
     <script src="./js/logout.js"></script>
+    <script src="./js/storage.js"></script>
+    
 </body>
 </html>
