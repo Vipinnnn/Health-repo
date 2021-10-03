@@ -6,7 +6,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: gray;
-  background-image: -webkit-linear-gradient(top left, #a802e0, #f7676a);
+  background-image: -webkit-linear-gradient(top left, #ec6fe6, #5027c2);
   color: white;
 }
 
@@ -16,8 +16,8 @@ a {
 }
 
 .container-main {
-  padding: 16px;
-  margin: 5px;
+  padding: 10px;
+  margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,16 +37,31 @@ a {
   position: relative;
 }
 
-.container-bottom h3 {
-  margin: 0px 20px 20px 20px;
+.container-bottom .newUser {
+  margin: 0px 0px 20px 20px;
+  
+}
+.forgotpass{
+ color: white;
+  margin-left: 0px;
+  margin-right: 20px;
+  font-weight: 800;
+  
+
+}
+.forgotpass:hover{
+  color: rgb(50, 19, 185);
 }
 
 .container-bottom #signup {
-  margin: 5px 10px;
+  width: 40%;
+  /* margin: 5px 10px; */
   color: white;
-  border: 2px solid white;
-  padding: 10px;
-  border-radius: 30px;
+  /* border: 2px solid white; */
+  
+}
+.signupBtn{
+  margin-top: 0;
 }
 
 .form-ctn {
@@ -75,13 +90,13 @@ form {
 form h2 {
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-size: 2rem;
 }
 
 label {
   font-size: 18px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding-left: 10px;
 }
 
@@ -122,7 +137,9 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
-
+.sgin:hover{
+  color: red;
+}
 @media screen and (max-width: 300px) {
   span.psw {
     display: block;

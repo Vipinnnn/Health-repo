@@ -6,24 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Repository</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     
 </head>
 <body>
     <div class="form-ctn">
       <form action="" id="signinForm">
-      <h2>Login Form</h2>
+      <h2>Login </h2>
+      <center>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Ves-logo.png" width="15%" alt="">
+      </center>
       <div class="container-main">
-        <label for="uname"><b>Username:</b></label>
+        <i class="fas fa-eye"></i>
+        
+        <label for="uname"><b>Email:</b></label>
         <input type="text" placeholder="Enter Email" name="uname" id="email" required>
     
         <label for="psw"><b>Password:</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+        <span><i class="fas fa-eye"></i></span>
+        <input  type="password" placeholder="Enter Password" name="psw" id="password" required>
+        
             
         <button type="submit"><h3>Login</h3></button>
       </div>
       <div class="container-bottom">
-        <h3> New User? <a href="./signup.html" id="signup">Sign Up</a></h3>
-        <h3> <a href="./forgotpassword.html">Forgot Password?</a></h3>
+        <h3 class="newUser"> New User?</h3> <a href="./signup.html" id="signup"><button type="button" class="signupBtn">Sign Up</button></a>
+        <h3 class="forgotpass"> <a class="forgotpass" href="./forgotpassword.html">Forgot Password?</a></h3>
       </div>
       </form>
     </div>

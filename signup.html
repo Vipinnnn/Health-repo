@@ -14,17 +14,19 @@
         <form id="signupForm" action="">
           <h2>Sign Up</h2>
             <div class="container-main">
+              <label for="name">Name: </label>
+              <input id="name" type="text" required  placeholder="Enter name">
               <label for="email">Email: </label>
-              <input id="email" type="email"  placeholder="Enter Email">
+              <input id="email" type="email" required  placeholder="Enter Email">
               <label for="psw">Password: </label>
-              <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+              <input id="password" type="password" required placeholder="Enter Password" name="psw" required>
               <label for="confirm password"> Confirm Password</label>
               <input id="repassword" type="password" placeholder="Re-enter Password" name="confirm password" hidden required>
 
             
               <button type="submit"><h3>Sign Up</h3></button>
             <div class="container-bottom">
-              <h3>Already Registered? <a href="./signin.html">Sign In</a></h3>
+              <h3>Already Registered? <a class="sgin" href="./signin.html">Sign In</a></h3>
             </div>
             </div>
             
