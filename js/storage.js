@@ -43,7 +43,19 @@ switch (monthNo) {
   default:
     break;
 }
-console.log(month, monthNo);
+
+
+
+firebase.auth().onAuthStateChanged((user)=>{
+  if (user) {
+    console.log(user.email);
+    
+  }
+  else{
+    location.replace("signin.html")
+  }
+  })
+
 
 
 
@@ -53,50 +65,104 @@ const upload2 = document.getElementById("upload2");
 
 
 //uploading File 1
+firebase.auth().onAuthStateChanged((user)=>{
+  if (user) {
+   var uid = user.uid; 
+   var email = user.email;
+  }
+
+
 upload.addEventListener("click", (e)=>{
+
     var file = document.getElementById("file").files[0];
-    const storage = firebase.storage().ref(`Reports/Blood Test/${month} ${year}/` + file.name);
-    // console.log(file);
+    const storage = firebase.storage().ref(`Reports/${email}/Blood Test/${month} ${year}/` + file.name);
+  
     const task = storage.put(file)
-    const ref = firebase.storage().ref("file.name")
+    
+  
+    const ref = firebase.storage().ref(file.name)
     task.on("state_changed", 
-    function (snap){
+    function progress (snap){
        const progress =(snap.bytesTransferred / snap.totalBytes * 100);
        const progressBar = document.getElementById("progressBar");
        progressBar.value = progress;
        console.log(progress);
        if (progress === 100) {
+        
            alert("File Uploaded")
-           location.reload();
+          
        }
+    },
+    function error(err){
+      console.log(err.message);
+    },
+    function completed (){
+      storage.getDownloadURL().then(url=>{
+        // console.log(ref.location.path_);
+        // console.log(url);
+        // console.log(uid);
+        firebase.firestore().collection("fileNames").doc(ref.location.path_).set({
+          fileName : ref.location.path_
+        })
+        firebase.firestore().collection("Patients").doc(user.uid).collection("Blood Reports").doc(ref.location.path_)
+        .set({
+          fileName: file.name,
+          fileUrl: url
+        }).then(()=>{
+          console.log(task);
+          console.log(task.uploadUrl_);
+          console.log("fileuploaded");
+          location.reload();
+        })
+      })
+      
     }
    
 
     )
-    
-    
+
+   
 
 
     
 })
+
+
 //uploading File 2
+
 upload2.addEventListener("click", (e)=>{
     var file2 = document.getElementById("file2").files[0];
-    const storage = firebase.storage().ref(`Reports/Cancer Test/${month} ${year}/` + file2.name);
-    console.log(file2);
+    const storage = firebase.storage().ref(`Reports/${email}/Radiology Test/${month} ${year}/` + file2.name);
+    console.log(file2.name);
     const task = storage.put(file2)
-    const ref = firebase.storage().ref("file2.name")
+    const ref = firebase.storage().ref(file2.name)
     task.on("state_changed", 
-    function (snap){
-       const progress =(snap.bytesTransferred / snap.totalBytes * 100);
-       const progressBar2 = document.getElementById("progressBar2");
-       progressBar2.value = progress;
-       console.log(progress);
-       if (progress === 100) {
-           alert("File Uploaded")
-           location.reload();
-       }
-    }
+    function progress (snap){
+      const progress =(snap.bytesTransferred / snap.totalBytes * 100);
+      const progressBar = document.getElementById("progressBar2");
+      progressBar.value = progress;
+      console.log(progress);
+      if (progress === 100) {
+          alert("File Uploaded")
+          
+      }
+   },
+   function error(err){
+     console.log(err.message);
+   },
+   function completed (){
+     storage.getDownloadURL().then(url=>{
+       
+      firebase.firestore().collection("Patients").doc(user.uid).collection("Radiology Reports").doc(ref.location.path_)
+        .set({
+          fileName: file2.name,
+          fileUrl: url
+       }).then(()=>{
+         console.log("fileuploaded");
+         location.reload();
+       })
+     })
+   }
    
 
     )
@@ -104,3 +170,6 @@ upload2.addEventListener("click", (e)=>{
 
     
 })
+})
+
+

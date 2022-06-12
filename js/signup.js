@@ -1,14 +1,15 @@
 
-
-
 const signupForm= document.getElementById("signupForm")
-signupForm.addEventListener("submit", (e)=>{
+if(signupForm){signupForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     //Getting users input
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const repassword = document.getElementById("repassword").value;
     const uname = document.getElementById("name").value;
+    const dob = document.getElementById("dob").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
     
     console.log(email, password, repassword);
     //Chechking for password
@@ -30,14 +31,20 @@ signupForm.addEventListener("submit", (e)=>{
 
         //Creating Users collection in firestore
         function createUserCollection(user) {
-          firebase.firestore().collection("users").doc(user.uid)
+          firebase.firestore().collection("Patients").doc(user.uid)
           .set({
             uid: user.uid,
             name: uname,
-            email: user.email
+            email: user.email,
+            dateOfBirth : dob,
+            age: age,
+            gender: gender
+
+
           }).then(()=>{
             alert("You have Succesfully Signed Up")
             authchanges();
+            
           })
           
         }
@@ -59,23 +66,25 @@ signupForm.addEventListener("submit", (e)=>{
         alert("ERROR")
       })
     }
+   
   }
 
   
 
-})
+})}
 
 //listen for auth status changes
 function authchanges(){
-  auth.onAuthStateChanged(user =>{
-  
-    if (user){
-      location.replace("./home.html");
+  firebase.auth().onAuthStateChanged((user)=>{
+    if (user) {
+      location.replace("home.html")
+      console.log(user.email);
     }
-    else()=>{
-    location.replace("./signin.html");
+    else{
+      location.replace("signin.html")
     }
-   
-  })
+    })
   
 }
+
+

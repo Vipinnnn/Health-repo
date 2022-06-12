@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #bb67f3;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 550;
+  }

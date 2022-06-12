@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Repository</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="./css/upload.css">
 </head>
-<body>
-    <h1>Health Reports</h1>
-    <h3>Blood Tests</h3>
-    <input type="file" id="file">
-    <progress id="progressBar" value="0" max="100"></progress>
-    <button type="submit" id="upload">upload</button>
-    <br>
-    <h3>Cancer Tests</h3>
-    <input type="file" id="file2">
-    <progress id="progressBar2" value="0" max="100"></progress>
-    <button type="submit" id="upload2">upload</button>
-    <br>
-    <br>
-    <button id="Logout">Logout</button>
 
+<body>
+    <!-- <form action="" id="reportType">
+        <input type="text" name="reportType" id="" required placeholder="Add Type Of Report">
+        <button>Add</button>
+        
+        <ul id="add-report-type"></ul>
+    </form> -->
+    <center>
+        <div class="navbar">
+            <ul>
+                <li><a class="nav" href="#home">Health Repository</a></li>
+                <li><a class="nav" href="./home.html" style="text-decoration: underline;">Upload Reports</a></li>
+                <li><a class="nav" href="./viewReports.html">View Reports</a></li>
+                <li><a class="nav" href="./loginLogs.html">Login Logs</a></li>
+                <li id="Logout"><a class="nav" href="">Logout</a></li>
+            </ul>
+        </div>
+        <h1>Upload Reports</h1>
+        <div class="bloodRepo">
+            <h3>Blood Tests</h3>
+            <div class="uploading">
+                <input type="file" id="file">
+                <progress id="progressBar" value="0" max="100"></progress>
+                <button type="submit" id="upload">Upload</button>
+            </div>
+        </div>
+        <br>
+        <div class="radioRepo">
+            <h3>Radiology Tests</h3>
+            <div class="uploading">
+                <input type="file" id="file2">
+                <progress id="progressBar2" value="0" max="100"></progress>
+                <button type="submit" id="upload2">Upload</button>
+            </div>
+        </div>
+
+
+
+    </center>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
     <script src="./js/firebaseconfig.js"></script>
-    <script>const storage = firebase.storage().ref();</script>
+
     <script src="./js/logout.js"></script>
     <script src="./js/storage.js"></script>
-    
+    <script src="./js/signup.js"></script>
+    <script src="./js/signin.js"></script>
+    <script src="./js/loginLogs.js"></script>
+    <script src="./js/session.js"></script>
+
 </body>
+
 </html>

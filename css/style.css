@@ -15,6 +15,7 @@ a {
   text-decoration: none;
 }
 
+
 .container-main {
   padding: 10px;
   margin: 0px;
@@ -102,7 +103,7 @@ label {
 
 input[type=text], input[type=password], input[type=email] {
   width: 100%;
-  padding: 16px 20px;
+  padding: 6px 10px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;

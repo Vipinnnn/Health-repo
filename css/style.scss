@@ -104,7 +104,23 @@ button:hover{
     background-color: white;
     color:black;
 }
-
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #bb67f3;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
 
 span.psw {
     float: right;

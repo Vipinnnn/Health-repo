@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Repository</title>
-    <link rel="stylesheet" href="css/style.css">
-  
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Repository</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <style>*{font-size: medium;}</style> -->
+
+
 </head>
+
 <body>
-    <div class="form-ctn">
-        <form id="signupForm" action="">
-          <h2>Sign Up</h2>
-            <div class="container-main">
-              <label for="name">Name: </label>
-              <input id="name" type="text" required  placeholder="Enter name">
-              <label for="email">Email: </label>
-              <input id="email" type="email" required  placeholder="Enter Email">
-              <label for="psw">Password: </label>
-              <input id="password" type="password" required placeholder="Enter Password" name="psw" required>
-              <label for="confirm password"> Confirm Password</label>
-              <input id="repassword" type="password" placeholder="Re-enter Password" name="confirm password" hidden required>
+  <div class="form-ctn">
+    <form id="signupForm" action="">
+      <h2>Sign Up</h2>
+      <div class="container-main">
+        <label for="name">Name: </label>
+        <input id="name" type="text" required placeholder="Enter name">
+        <label for="email">Email: </label>
+        <input id="email" type="email" required placeholder="Enter Email">
+        <label for="psw">Password: </label>
+        <input id="password" type="password" required placeholder="Enter Password" name="psw" required>
+        <label for="confirm password"> Confirm Password</label>
+        <input id="repassword" type="password" placeholder="Re-enter Password" name="confirm password" hidden required>
+        <label for="dob">Date of Birth: </label>
+        <input id="dob" type="date" required placeholder="">
+        <label for="ageb">Age: </label>
+        <input id="age" type="number" required placeholder="">
+        <label for="gender">Gender: </label>
+        <input type="text" id="gender" required>
+        <!-- <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label> -->
 
-            
-              <button type="submit"><h3>Sign Up</h3></button>
-            <div class="container-bottom">
-              <h3>Already Registered? <a class="sgin" href="./signin.html">Sign In</a></h3>
-            </div>
-            </div>
-            
+        <button type="submit">
+          <h3>Sign Up</h3>
+        </button>
+        <div class="container-bottom">
+          <h3>Already Registered? <a class="sgin" href="./signin.html">Sign In</a></h3>
+        </div>
+      </div>
 
-        </form>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
-    <script src="./js/firebaseConfig.js"></script>
-      <script src="js/signup.js"></script>
+
+    </form>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+  <script src="./js/firebaseConfig.js"></script>
+  <script src="js/signup.js"></script>
 </body>
+
 </html>

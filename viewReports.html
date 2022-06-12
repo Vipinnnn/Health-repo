@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Repository</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/view.css">
+</head>
+<body>
+    <div class="navbar">
+        
+        <ul>
+            <li><a href="./home.html">Health Repository</a></li>
+            <li><a href="./home.html">Upload Reports</a></li>
+            <li><a href="./viewReports.html" style="text-decoration: underline;">View Reports</a></li>
+            <li><a href="./loginLogs.html">Login Logs</a></li>
+            <li id="Logout"><a href="">Logout</a></li>
+          </ul>
+    </div>
+    <center>
+        <div class="view">
+    <h1>View Reports</h1>
+    <div class="blood">
+        <div >
+    <h3>Blood Reports</h3>
+
+    
+ 
+
+
+    <ul id="bloodReports">
+        <!-- <li><a href="" src="" id="blood1" frameborder="0" target="_blank" value=""><p id="fileName"></p></a></li> -->
+    </ul>
+
+    <h3>Radiology Reports</h3>
+    <ul id="radiologyReports">
+        
+    </ul>
+    
+    </div>
+</div>
+</center>
+</div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+    <script src="./js/firebaseconfig.js"></script>
+    
+    <script src="./js/logout.js"></script>
+    
+    
+    
+    <script src="./js/view.js"></script>
+    <script src="./js/session.js"></script>
+</body>
+</html>
